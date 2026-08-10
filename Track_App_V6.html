@@ -1,0 +1,2960 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#1B4332" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Siddhi Tracker" />
+    
+    <title>🏏 Siddhi Super App v5.0</title>
+    
+    <!-- ===== PWA MANIFEST (inline base64) ===== -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIlNpZGRoaSBUcmFja2VyIiwgInNob3J0X25hbWUiOiAiU2lkZGhpIiwgImRlc2NyaXB0aW9uIjogIkNyaWNrZXQgYXRobGV0ZSB0cmFja2VyIHdpdGggYXV0byBwcm90ZWluLCBhY3Rpdml0eSBtb2Rlcywgc2xlZXAsIHNjb3JlcyIsICJzdGFydF91cmwiOiAiLiIsICJzY29wZSI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMxQjQzMzIiLCAidGhlbWVfY29sb3IiOiAiIzFCNDMzMiIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDEwMCAxMDAnJTNFJTNDcmVjdCB3aWR0aD0nMTAwJyBoZWlnaHQ9JzEwMCcgcng9JzIwJyBmaWxsPSclMjMxQjQzMzInLyUzRSUzQ3RleHQgeD0nNTAnIHk9JzY1JyBmb250LXNpemU9JzUwJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZmlsbD0nd2hpdGUnJTNFJUYwJTlGJThGJThGJTNDL3RleHQlM0UlM0Mvc3ZnJTNFIiwgInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55In0sIHsic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMTAwIDEwMCclM0UlM0NyZWN0IHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyByeD0nMjAnIGZpbGw9JyUyMzFCNDMzMicvJTNFJTNDdGV4dCB4PSc1MCcgeT0nNjUnIGZvbnQtc2l6ZT0nNTAnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmaWxsPSd3aGl0ZSclM0UlRjAlOUYlOEYlOEYlM0MvdGV4dCUzRSUzQy9zdmclM0UiLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLCAicHVycG9zZSI6ICJhbnkifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxMDAgMTAwJyUzRSUzQ3JlY3Qgd2lkdGg9JzEwMCcgaGVpZ2h0PScxMDAnIGZpbGw9JyUyMzFCNDMzMicvJTNFJTNDdGV4dCB4PSc1MCcgeT0nNjUnIGZvbnQtc2l6ZT0nNTAnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmaWxsPSd3aGl0ZSclM0UlRjAlOUYlOEYlOEYlM0MvdGV4dCUzRSUzQy9zdmclM0UiLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLCAicHVycG9zZSI6ICJtYXNrYWJsZSJ9XSwgInNob3J0Y3V0cyI6IFt7Im5hbWUiOiAiSG9tZSIsICJ1cmwiOiAiLiIsICJpY29uIjogImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnIGZpbGw9J3doaXRlJyB3aWR0aD0nMjQnIGhlaWdodD0nMjQnJTNFJTNDcGF0aCBkPSdNMTAgMjB2LTZoNHY2aDV2LThoM0wxMiAzIDIgMTJoM3Y4eicvJTNFJTNDL3N2ZyUzRSJ9XX0=" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231B4332'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle' font-family='sans-serif' fill='white'%3E%F0%9F%8F%8F%3C/text%3E%3C/svg%3E" />
+
+    <style>
+        /* ============================================================
+                   ROOT VARIABLES
+                   ============================================================ */
+        :root {
+            --bg: #f4f1e6;
+            --surface: #ffffff;
+            --primary: #1B4332;
+            --primary-light: #2D6A4F;
+            --accent: #E8A33D;
+            --danger: #9B2226;
+            --text: #16211C;
+            --text-light: #5a6b63;
+            --border: #d8d2c2;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #3498db;
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f1419;
+            --surface: #1a232b;
+            --primary: #2d6a4f;
+            --primary-light: #409f7a;
+            --text: #e8edf0;
+            --text-light: #9aaeb9;
+            --border: #2d3a45;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: background var(--transition), color var(--transition);
+            min-height: 100vh;
+            padding-bottom: calc(80px + var(--safe-bottom));
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 10px;
+        }
+
+        #app {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 12px 20px;
+            position: relative;
+        }
+
+        /* ============================================================
+                   HEADER
+                   ============================================================ */
+        .app-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            padding: 16px 14px 14px;
+            border-radius: 0 0 24px 24px;
+            margin: 0 -12px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            box-shadow: 0 4px 20px rgba(27, 67, 50, 0.3);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-name {
+            font-size: 18px;
+            font-weight: 800;
+        }
+        .header-name small {
+            font-weight: 400;
+            font-size: 11px;
+            opacity: 0.7;
+            display: block;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .header-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: #fff;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .match-countdown {
+            background: var(--accent);
+            color: var(--text);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .badge-match {
+            background: var(--accent);
+            color: var(--text);
+        }
+        .badge-practice {
+            background: var(--info);
+            color: #fff;
+        }
+        .badge-rest {
+            background: #95a5a6;
+            color: #fff;
+        }
+        .badge-recovery {
+            background: #9b59b6;
+            color: #fff;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
+            margin-top: 12px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-sm);
+            padding: 4px 4px;
+            text-align: center;
+        }
+        .stat-card .label {
+            font-size: 6.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.7;
+        }
+        .stat-card .value {
+            font-size: 14px;
+            font-weight: 800;
+        }
+        .stat-card .value small {
+            font-size: 8px;
+            font-weight: 400;
+            opacity: 0.6;
+        }
+        .stat-card .progress {
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin-top: 2px;
+            overflow: hidden;
+        }
+        .stat-card .progress .fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* ============================================================
+                   TABS
+                   ============================================================ */
+        .tab-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            display: flex;
+            padding: 3px 0 calc(3px + var(--safe-bottom));
+            z-index: 30;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .tab-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 7px;
+            padding: 4px 0 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+            cursor: pointer;
+            transition: color var(--transition);
+            position: relative;
+        }
+        .tab-btn .icon {
+            font-size: 15px;
+        }
+        .tab-btn.active {
+            color: var(--primary);
+        }
+        .tab-btn .badge {
+            position: absolute;
+            top: 1px;
+            right: 50%;
+            transform: translateX(calc(50% + 12px));
+            background: var(--danger);
+            color: #fff;
+            font-size: 6px;
+            padding: 1px 4px;
+            border-radius: 10px;
+        }
+
+        /* ============================================================
+                   PAGES
+                   ============================================================ */
+        .page {
+            display: none;
+            animation: fadeUp 0.3s ease;
+        }
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================================
+                   CARDS
+                   ============================================================ */
+        .card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: background var(--transition), border var(--transition);
+        }
+
+        .card-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary-light);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* ============================================================
+                   ACTIVITY CHIPS
+                   ============================================================ */
+        .activity-chip {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 2px 3px 2px 0;
+            cursor: pointer;
+            border: 2px solid var(--border);
+            background: transparent;
+            transition: all 0.2s;
+            color: var(--text);
+        }
+        .activity-chip.active {
+            border-color: var(--primary-light);
+            background: var(--primary-light);
+            color: #fff;
+        }
+        .activity-chip:hover {
+            border-color: var(--primary-light);
+        }
+
+        /* ============================================================
+                   PROTEIN RING
+                   ============================================================ */
+        .protein-display {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 0;
+        }
+        .protein-ring {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+            background: var(--primary-light);
+        }
+        .protein-ring .num {
+            font-size: 20px;
+            line-height: 1;
+        }
+        .protein-ring .lbl {
+            font-size: 8px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        .protein-details {
+            flex: 1;
+            font-size: 12px;
+        }
+        .protein-details .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .protein-details .row:last-child {
+            border-bottom: none;
+        }
+        .protein-details .val {
+            font-weight: 700;
+        }
+
+        /* ============================================================
+                   SCORE DISPLAY
+                   ============================================================ */
+        .score-ring {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 6px;
+        }
+        .score-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .score-circle .num {
+            font-size: 20px;
+            line-height: 1;
+        }
+        .score-circle .lbl {
+            font-size: 8px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        .score-details {
+            flex: 1;
+            font-size: 12px;
+        }
+        .score-details .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .score-details .row:last-child {
+            border-bottom: none;
+        }
+        .score-details .row .val {
+            font-weight: 700;
+        }
+
+        /* ============================================================
+                   ALERTS
+                   ============================================================ */
+        .alert-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .alert-item.danger {
+            background: rgba(155, 34, 38, 0.12);
+            border-left: 4px solid var(--danger);
+            color: var(--danger);
+        }
+        .alert-item.warning {
+            background: rgba(243, 156, 18, 0.12);
+            border-left: 4px solid var(--warning);
+            color: #b7950b;
+        }
+        .alert-item.success {
+            background: rgba(46, 204, 113, 0.12);
+            border-left: 4px solid var(--success);
+            color: #1a7a4a;
+        }
+
+        /* ============================================================
+                   WATER QUICK ADD
+                   ============================================================ */
+        .water-btns {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        .water-btns .btn {
+            flex: 1;
+            min-width: 50px;
+            padding: 5px 8px;
+            font-size: 11px;
+            justify-content: center;
+        }
+
+        /* ============================================================
+                   BUTTONS
+                   ============================================================ */
+        .btn {
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 6px 12px;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            justify-content: center;
+        }
+        .btn:active {
+            transform: scale(0.96);
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--primary-light);
+        }
+        .btn-accent {
+            background: var(--accent);
+            color: var(--text);
+        }
+        .btn-danger {
+            background: var(--danger);
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-ghost {
+            background: var(--border);
+            color: var(--text);
+        }
+        .btn-sm {
+            padding: 4px 8px;
+            font-size: 10px;
+        }
+        .btn-xs {
+            padding: 2px 6px;
+            font-size: 9px;
+        }
+        .btn-block {
+            width: 100%;
+            justify-content: center;
+        }
+        .btn-success {
+            background: var(--success);
+            color: #fff;
+        }
+        .btn-info {
+            background: var(--info);
+            color: #fff;
+        }
+
+        /* ============================================================
+                   FORMS
+                   ============================================================ */
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 7px 10px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-family: inherit;
+            background: var(--bg);
+            color: var(--text);
+            transition: border var(--transition), background var(--transition);
+        }
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-light);
+        }
+        label {
+            display: block;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 3px;
+        }
+
+        /* ============================================================
+                   FOOD / WORKOUT ITEMS
+                   ============================================================ */
+        .food-item,
+        .ex-item,
+        .log-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+        }
+        .food-item:last-child,
+        .ex-item:last-child,
+        .log-item:last-child {
+            border-bottom: none;
+        }
+
+        .food-name {
+            font-weight: 600;
+            font-size: 12px;
+        }
+        .food-unit {
+            font-size: 10px;
+            color: var(--text-light);
+        }
+        .food-protein {
+            font-weight: 700;
+            color: var(--primary-light);
+        }
+
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .qty-control .qty {
+            min-width: 18px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .ex-name.done {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        .ex-target {
+            font-size: 10px;
+            color: var(--text-light);
+        }
+        .ex-tip {
+            font-size: 9px;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 2px;
+            background: var(--bg);
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+
+        /* ============================================================
+                   SUGGESTIONS
+                   ============================================================ */
+        .suggestion-chip {
+            display: inline-block;
+            background: rgba(232, 163, 61, 0.15);
+            color: var(--accent);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin: 2px 2px 2px 0;
+            border: 1px solid rgba(232, 163, 61, 0.2);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .suggestion-chip:hover {
+            background: var(--accent);
+            color: var(--text);
+        }
+
+        /* ============================================================
+                   SLEEP
+                   ============================================================ */
+        .sleep-display {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 6px 10px;
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+        }
+        .sleep-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .sleep-info {
+            flex: 1;
+        }
+        .sleep-info .hours {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .sleep-info .desc {
+            font-size: 10px;
+            color: var(--text-light);
+        }
+        .sleep-info .time {
+            font-size: 10px;
+            color: var(--text-light);
+        }
+
+        /* ============================================================
+                   VOICE
+                   ============================================================ */
+        .voice-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: 0 4px 16px rgba(27, 67, 50, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .voice-btn.listening {
+            background: linear-gradient(135deg, var(--danger), #c0392b);
+            animation: pulse-voice 1.2s infinite;
+        }
+        @keyframes pulse-voice {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(155, 34, 38, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(155, 34, 38, 0);
+            }
+        }
+
+        /* ============================================================
+                   CHECKLIST
+                   ============================================================ */
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .checklist-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary);
+            flex-shrink: 0;
+        }
+        .checklist-item .label {
+            font-size: 12px;
+            margin: 0;
+        }
+        .checklist-item .label.done {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        /* ============================================================
+                   CHART
+                   ============================================================ */
+        .mini-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 40px;
+            padding: 4px 0;
+        }
+        .mini-chart .bar {
+            flex: 1;
+            border-radius: 3px 3px 0 0;
+            min-height: 4px;
+            transition: height 0.5s ease;
+            background: var(--primary-light);
+        }
+        .mini-chart .bar.low {
+            background: var(--warning);
+        }
+        .mini-chart .bar.high {
+            background: var(--success);
+        }
+        .mini-chart .bar.verylow {
+            background: var(--danger);
+        }
+
+        /* ============================================================
+                   MONTHLY
+                   ============================================================ */
+        .month-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+            margin-top: 6px;
+        }
+        .month-week {
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            padding: 4px;
+            text-align: center;
+        }
+        .month-week .week-label {
+            font-size: 7px;
+            color: var(--text-light);
+        }
+        .month-week .week-score {
+            font-size: 16px;
+            font-weight: 800;
+        }
+        .month-week .week-bar {
+            height: 3px;
+            border-radius: 10px;
+            margin-top: 2px;
+            background: var(--border);
+            overflow: hidden;
+        }
+        .month-week .week-bar .fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* ============================================================
+                   TOAST
+                   ============================================================ */
+        #toast {
+            position: fixed;
+            bottom: calc(80px + var(--safe-bottom));
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text);
+            color: var(--bg);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 50;
+            max-width: 90%;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        /* ============================================================
+                   PWA INSTALL BANNER
+                   ============================================================ */
+        #installBanner {
+            display: none;
+            position: fixed;
+            bottom: calc(80px + var(--safe-bottom));
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 12px 16px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            z-index: 40;
+            align-items: center;
+            gap: 12px;
+        }
+        #installBanner.show {
+            display: flex;
+        }
+        #installBanner .icon {
+            font-size: 32px;
+        }
+        #installBanner .info {
+            flex: 1;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        #installBanner .info small {
+            font-weight: 400;
+            font-size: 11px;
+            color: var(--text-light);
+            display: block;
+        }
+        #installBanner .btn {
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+                   UTILITY
+                   ============================================================ */
+        .flex {
+            display: flex;
+        }
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .flex-center {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .gap-6 {
+            gap: 6px;
+        }
+        .gap-8 {
+            gap: 8px;
+        }
+        .mt-6 {
+            margin-top: 6px;
+        }
+        .mt-8 {
+            margin-top: 8px;
+        }
+        .mt-12 {
+            margin-top: 12px;
+        }
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-muted {
+            color: var(--text-light);
+            font-size: 11px;
+        }
+        .text-sm {
+            font-size: 10px;
+        }
+        .fw-700 {
+            font-weight: 700;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+
+        .theme-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .theme-toggle-label input[type="checkbox"] {
+            width: 32px;
+            height: 18px;
+            appearance: none;
+            background: var(--border);
+            border-radius: 20px;
+            position: relative;
+            transition: background var(--transition);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .theme-toggle-label input[type="checkbox"]::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #fff;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform var(--transition);
+        }
+        .theme-toggle-label input[type="checkbox"]:checked {
+            background: var(--primary-light);
+        }
+        .theme-toggle-label input[type="checkbox"]:checked::after {
+            transform: translateX(14px);
+        }
+
+        @media (max-width: 420px) {
+            .stats-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .stat-card:nth-child(4),
+            .stat-card:nth-child(5) {
+                display: none;
+            }
+            .header-name {
+                font-size: 15px;
+            }
+            .app-header {
+                padding: 12px 10px 12px;
+            }
+            .card {
+                padding: 10px 12px;
+            }
+            .protein-ring {
+                width: 54px;
+                height: 54px;
+            }
+            .protein-ring .num {
+                font-size: 17px;
+            }
+            .score-circle {
+                width: 54px;
+                height: 54px;
+            }
+            .score-circle .num {
+                font-size: 17px;
+            }
+            .month-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* PWA standalone mode */
+        @media (display-mode: standalone) {
+            .app-header {
+                padding-top: calc(16px + env(safe-area-inset-top, 0px));
+            }
+            body {
+                padding-bottom: calc(80px + var(--safe-bottom));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <!-- ============================================================
+        HEADER
+        ============================================================ -->
+        <header class="app-header">
+            <div class="header-top">
+                <div>
+                    <div class="header-name">
+                        🏏 Siddhi
+                        <small>Super App v5.0</small>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span class="match-countdown" id="countdown">🏏 Set Date</span>
+                    <span class="badge badge-practice" id="activityBadge">Practice</span>
+                    <button class="header-btn" id="themeToggle" title="Toggle Theme">🌓</button>
+                </div>
+            </div>
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="label">💪 Protein</div>
+                    <div class="value" id="hdrProtein">0<small>g</small></div>
+                    <div class="progress"><div class="fill" id="hdrProteinBar" style="width:0%;background:var(--accent)"></div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">💧 Water</div>
+                    <div class="value" id="hdrWater">0<small>L</small></div>
+                    <div class="progress"><div class="fill" id="hdrWaterBar" style="width:0%;background:#4fc3f7"></div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">😴 Sleep</div>
+                    <div class="value" id="hdrSleep">0<small>h</small></div>
+                    <div class="progress"><div class="fill" id="hdrSleepBar" style="width:0%;background:#9b59b6"></div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">⭐ Score</div>
+                    <div class="value" id="hdrScore">0<small>%</small></div>
+                    <div class="progress"><div class="fill" id="hdrScoreBar" style="width:0%;background:var(--success)"></div></div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">📊 Factor</div>
+                    <div class="value" id="hdrFactor">1.6<small>x</small></div>
+                    <div class="progress"><div class="fill" id="hdrFactorBar" style="width:0%;background:var(--info)"></div></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================================
+        PWA INSTALL BANNER
+        ============================================================ -->
+        <div id="installBanner">
+            <span class="icon">📲</span>
+            <div class="info">
+                Install Siddhi Tracker
+                <small>Add to home screen for offline access</small>
+            </div>
+            <button class="btn btn-primary" id="installBtn">Install</button>
+            <button class="btn btn-ghost btn-sm" id="installCloseBtn">✕</button>
+        </div>
+
+        <!-- ============================================================
+        TOAST
+        ============================================================ -->
+        <div id="toast"></div>
+
+        <!-- ============================================================
+        PAGES (same as previous v5.0 — abbreviated for length)
+        ============================================================ -->
+        <!-- HOME -->
+        <div class="page active" id="page-home">
+            <div class="card" style="border-left:4px solid var(--accent);">
+                <div class="card-title">💪 Protein Status <span id="proteinSourceBadge" style="font-size:9px;color:var(--text-light);font-weight:400;">Auto</span></div>
+                <div class="protein-display">
+                    <div class="protein-ring" id="proteinRing">
+                        <span class="num" id="ringPercent">0%</span>
+                        <span class="lbl">Target</span>
+                    </div>
+                    <div class="protein-details">
+                        <div class="row"><span>🎯 Target</span><span class="val" id="displayTarget">0g</span></div>
+                        <div class="row"><span>✅ Consumed</span><span class="val" id="displayConsumed">0g</span></div>
+                        <div class="row"><span>📉 Remaining</span><span class="val" id="displayRemaining">0g</span></div>
+                        <div class="row"><span>📊 Factor</span><span class="val" id="displayFactor">1.6g/kg</span></div>
+                    </div>
+                </div>
+                <div style="height:4px;background:var(--border);border-radius:10px;overflow:hidden;">
+                    <div id="proteinBar" style="height:100%;width:0%;background:linear-gradient(90deg,var(--primary-light),var(--accent));border-radius:10px;transition:width 0.5s;"></div>
+                </div>
+                <div class="flex gap-6 mt-6" style="flex-wrap:wrap;">
+                    <button class="btn btn-sm btn-primary" id="proteinAutoBtn">🔄 Auto</button>
+                    <button class="btn btn-sm btn-outline" id="proteinManualBtn">✏️ Manual</button>
+                    <button class="btn btn-sm btn-ghost" id="proteinResetBtn">↺ Reset</button>
+                </div>
+                <div id="proteinManualBox" style="display:none;margin-top:6px;">
+                    <div class="flex gap-6">
+                        <input type="number" id="proteinManualInput" placeholder="Target (g)" style="flex:1;" />
+                        <button class="btn btn-sm btn-accent" id="proteinManualSaveBtn">Set</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🏏 Activity Level</div>
+                <div class="flex" style="flex-wrap:wrap;gap:4px;">
+                    <button class="activity-chip" data-activity="rest">🛌 Rest</button>
+                    <button class="activity-chip active" data-activity="practice">🏏 Practice</button>
+                    <button class="activity-chip" data-activity="match">🏆 Match</button>
+                    <button class="activity-chip" data-activity="recovery">💪 Recovery</button>
+                </div>
+                <div class="flex gap-6 mt-6">
+                    <div style="flex:1;">
+                        <label>Weight (kg)</label>
+                        <input type="number" id="weightInput" value="50" min="30" max="120" step="0.5" />
+                    </div>
+                    <div style="flex:1;">
+                        <label>Factor</label>
+                        <select id="factorSelect">
+                            <option value="1.2">1.2 (Rest)</option>
+                            <option value="1.6" selected>1.6 (Practice)</option>
+                            <option value="1.8">1.8 (Heavy)</option>
+                            <option value="2.0">2.0 (Match)</option>
+                            <option value="2.2">2.2 (Elite)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="border-left:4px solid var(--success);">
+                <div class="card-title">⭐ Today's Performance Score</div>
+                <div id="todayScoreDisplay"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔔 Alerts</div>
+                <div id="alertsContainer"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">💧 Quick Water</div>
+                <div class="water-btns">
+                    <button class="btn btn-info btn-sm" data-water="250">+250ml</button>
+                    <button class="btn btn-info btn-sm" data-water="500">+500ml</button>
+                    <button class="btn btn-info btn-sm" data-water="1000">+1L</button>
+                    <button class="btn btn-outline btn-sm" data-water="-250">-250ml</button>
+                </div>
+                <div class="text-muted mt-6">Today: <strong id="waterTodayDisplay">0ml</strong> / <span id="waterTargetDisplay">3000ml</span></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🧠 Smart Suggestions</div>
+                <div id="smartSuggestions" class="text-muted">Loading...</div>
+            </div>
+
+            <div class="card" style="border-left:4px solid #9b59b6;">
+                <div class="card-title">😴 Sleep Tracker</div>
+                <div id="sleepDisplay"></div>
+                <div class="flex gap-6 mt-6">
+                    <button class="btn btn-outline btn-sm" id="sleepManualBtn">✏️ Edit</button>
+                    <button class="btn btn-ghost btn-sm" id="sleepResetBtn">🔄 Reset</button>
+                </div>
+                <div id="sleepManualBox" style="display:none;" class="mt-6">
+                    <div class="grid-2">
+                        <div><label>Bed Time</label><input type="time" id="sleepBedTime" /></div>
+                        <div><label>Wake Time</label><input type="time" id="sleepWakeTime" /></div>
+                    </div>
+                    <div class="flex gap-6 mt-6">
+                        <button class="btn btn-primary btn-sm" id="sleepSaveManual">💾 Save</button>
+                        <button class="btn btn-ghost btn-sm" id="sleepCancelManual">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🎤 Voice Log</div>
+                <div class="flex-center" style="justify-content:center;gap:10px;flex-wrap:wrap;">
+                    <button class="voice-btn" id="voiceBtn">🎤</button>
+                    <span class="text-muted" id="voiceStatus">Tap mic and speak</span>
+                </div>
+                <div id="voiceResult" class="mt-6 text-muted"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📋 Match Day Checklist</div>
+                <div id="checklist"></div>
+            </div>
+        </div>
+
+        <!-- DIET -->
+        <div class="page" id="page-diet">
+            <div class="card">
+                <div class="card-title">🍽️ Log Food</div>
+                <div id="foodList"></div>
+                <button class="btn btn-outline btn-sm mt-6" id="showAddFoodBtn">+ Add Custom Food</button>
+                <div id="addFoodBox" style="display:none;" class="mt-6">
+                    <input type="text" id="newFoodName" placeholder="Food name" />
+                    <input type="text" id="newFoodUnit" placeholder="Unit" class="mt-6" />
+                    <input type="number" id="newFoodProtein" placeholder="Protein (g)" class="mt-6" />
+                    <div class="flex gap-6 mt-6">
+                        <button class="btn btn-primary" id="saveNewFoodBtn">Save</button>
+                        <button class="btn btn-ghost" id="cancelAddFoodBtn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📝 Today's Log</div>
+                <div id="todayFoodLog"><span class="text-muted">Nothing logged yet.</span></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">💊 Supplement</div>
+                <div class="flex gap-6">
+                    <button class="btn btn-outline btn-sm" data-supp="30">+30g</button>
+                    <button class="btn btn-outline btn-sm" data-supp="40">+40g</button>
+                    <input type="number" id="customSupp" placeholder="g" style="width:60px;" />
+                    <button class="btn btn-primary btn-sm" id="addSuppBtn">Add</button>
+                </div>
+                <div class="text-sm mt-6">Today: <span id="suppDisplay">0g</span> powder</div>
+            </div>
+        </div>
+
+        <!-- WORKOUT -->
+        <div class="page" id="page-workout">
+            <div class="card">
+                <div class="card-title">🏋️ Today's Workout</div>
+                <select id="workoutPlanSelect" class="mb-6"></select>
+                <div id="workoutList"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📝 Edit Plans</div>
+                <select id="editPlanSelect"></select>
+                <button class="btn btn-ghost btn-sm mt-6" id="toggleEditBtn">✏️ Edit Plan</button>
+                <div id="planEditor" style="display:none;" class="mt-6"></div>
+                <button class="btn btn-accent btn-sm mt-6" id="newPlanBtn">+ New Plan</button>
+            </div>
+        </div>
+
+        <!-- ANALYTICS -->
+        <div class="page" id="page-analytics">
+            <div class="card">
+                <div class="card-title">📊 Weekly Performance</div>
+                <div id="weeklyScoreDisplay"></div>
+                <div id="weeklySuggestions" class="mt-6"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📈 Monthly Score (4 Weeks)</div>
+                <div id="monthlyScoreDisplay"></div>
+                <div class="month-grid" id="monthGrid"></div>
+                <div id="monthlySuggestions" class="mt-6"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📉 Weekly Trends</div>
+                <div id="weeklyChart" class="mini-chart" style="height:50px;"></div>
+                <div class="flex-between mt-6 text-sm text-muted">
+                    <span>W1</span><span>W2</span><span>W3</span><span>W4</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📊 History</div>
+                <div id="historyList"></div>
+                <button class="btn btn-accent btn-sm mt-6" id="exportBtn">⬇ Export CSV</button>
+            </div>
+        </div>
+
+        <!-- PROFILE -->
+        <div class="page" id="page-profile">
+            <div class="card">
+                <div class="card-title">👤 Profile</div>
+                <label>Name</label>
+                <input type="text" id="profName" placeholder="Siddhi" />
+                <label class="mt-6">Weight (kg)</label>
+                <input type="number" id="profWeight" placeholder="50" />
+                <label class="mt-6">Height (cm)</label>
+                <input type="number" id="profHeight" placeholder="160" />
+                <button class="btn btn-primary btn-block mt-6" id="saveProfileBtn">Save Profile</button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🌓 Theme</div>
+                <label class="theme-toggle-label">
+                    <input type="checkbox" id="darkModeToggle" /> Dark Mode
+                </label>
+            </div>
+
+            <div class="card">
+                <div class="card-title">🔗 Google Sheet Sync</div>
+                <label>Web App URL</label>
+                <input type="text" id="sheetUrl" placeholder="https://script.google.com/macros/s/.../exec" />
+                <div class="flex gap-6 mt-6">
+                    <button class="btn btn-primary btn-sm" id="saveSheetBtn">Save</button>
+                    <button class="btn btn-outline btn-sm" id="syncNowBtn">↻ Sync Now</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📅 Match Day</div>
+                <label>Next Match Date</label>
+                <input type="date" id="matchDate" />
+                <div class="text-sm mt-6 text-muted">Set your next match date for countdown.</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">💡 About</div>
+                <div class="text-muted text-sm">
+                    <strong>Siddhi Super App v5.0 — PWA Ready</strong><br />
+                    Auto protein calculator with cricket-specific activity modes.<br />
+                    Tracks protein, water, workout, sleep, daily/weekly/monthly scores.<br />
+                    All data stored locally in your browser.<br />
+                    <span style="color:var(--success);">✅ PWA Ready — Add to Home Screen works!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================
+        TAB BAR
+        ============================================================ -->
+        <nav class="tab-bar">
+            <button class="tab-btn active" data-page="home"><span class="icon">🏠</span>Home</button>
+            <button class="tab-btn" data-page="diet"><span class="icon">🍽️</span>Diet</button>
+            <button class="tab-btn" data-page="workout"><span class="icon">🏋️</span>Workout</button>
+            <button class="tab-btn" data-page="analytics"><span class="icon">📊</span>Analytics</button>
+            <button class="tab-btn" data-page="profile"><span class="icon">⚙️</span>Settings</button>
+        </nav>
+    </div>
+
+    <script>
+        // ============================================================
+        // SIDDHI SUPER APP v5.0 — PWA ENABLED
+        // ============================================================
+
+        // ===== PWA SERVICE WORKER REGISTRATION =====
+        // Register sw.js (must be hosted in the same folder as this HTML file)
+        // Note: browsers do NOT allow registering a service worker from a
+        // blob: URL, so it must be a real .js file served alongside this page.
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(function(reg) {
+                    console.log('✅ Service Worker registered');
+                })
+                .catch(function(err) {
+                    console.log('⚠️ Service Worker registration failed (app will still work, just without offline caching):', err);
+                });
+        }
+
+        // ===== PWA INSTALL BANNER =====
+        let deferredPrompt = null;
+
+        window.addEventListener('beforeinstallprompt', function(e) {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').classList.add('show');
+        });
+
+        document.getElementById('installBtn').addEventListener('click', function() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then(function(choiceResult) {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('✅ User accepted install');
+                        document.getElementById('installBanner').classList.remove('show');
+                    } else {
+                        console.log('❌ User dismissed install');
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                // Fallback: show instructions
+                flash('📲 Tap the share icon → "Add to Home Screen"');
+                document.getElementById('installBanner').classList.remove('show');
+            }
+        });
+
+        document.getElementById('installCloseBtn').addEventListener('click', function() {
+            document.getElementById('installBanner').classList.remove('show');
+        });
+
+        // ============================================================
+        // FULL APP LOGIC (same as v5.0 — abbreviated)
+        // ============================================================
+        (function() {
+            'use strict';
+
+            // ============================================================
+            // CONSTANTS
+            // ============================================================
+            const DEFAULT_FOODS = [
+                { id: 'egg', name: 'Boiled Egg', unit: '1 egg', protein: 6 },
+                { id: 'chicken', name: 'Chicken', unit: '100g cooked', protein: 31 },
+                { id: 'milk', name: 'Milk', unit: '1 cup (200ml)', protein: 6.6 },
+                { id: 'curd', name: 'Curd / Dahi', unit: '1 cup', protein: 7 },
+                { id: 'paneer', name: 'Paneer', unit: '50g', protein: 9 },
+                { id: 'sprouts', name: 'Sprouts', unit: '1 cup', protein: 7 },
+                { id: 'dal', name: 'Dal', unit: '1 cup cooked', protein: 7 },
+                { id: 'soyabin', name: 'Soyabean', unit: '100g', protein: 17 },
+                { id: 'banana', name: 'Banana', unit: '1 medium', protein: 1.3 },
+                { id: 'peanuts', name: 'Peanuts', unit: '30g', protein: 7 },
+            ];
+
+            const DEFAULT_WORKOUTS = {
+                'General': [
+                    { id: 'sprints', name: 'Sprints 6x30m', target: '6 reps', tip: 'Explosive start' },
+                    { id: 'boxjump', name: 'Box Jumps', target: '4x8', tip: 'Land soft' },
+                    { id: 'plank', name: 'Plank Hold', target: '3x45s', tip: 'Keep hips level' },
+                    { id: 'squats', name: 'Squats', target: '4x12', tip: 'Knees over toes' },
+                ],
+                'Conditioning': [
+                    { id: 'shuttles', name: 'Shuttle Runs', target: '10 reps', tip: 'Sprint out' },
+                    { id: 'skipping', name: 'Skipping Rope', target: '3x2min', tip: 'Light on feet' },
+                ],
+                'Skill': [
+                    { id: 'throwdown', name: 'Throwdowns', target: '3x15', tip: 'Watch the ball' },
+                    { id: 'catching', name: 'Catching Drill', target: '5x10', tip: 'Soft hands' },
+                ],
+                'Rest / Recovery': [
+                    { id: 'foamroll', name: 'Foam Rolling', target: '10 min', tip: 'Slow rolls' },
+                    { id: 'stretch', name: 'Static Stretching', target: '15 min', tip: 'Hold 30s' },
+                ],
+            };
+
+            const MATCH_CHECKLIST = [
+                '🟢 Kit bag packed',
+                '🟢 Hydrated (3L water)',
+                '🟢 Protein meal done',
+                '🟢 Warm-up done',
+                '🟢 Mentally focused',
+                '🟢 Sleep 8+ hours',
+            ];
+
+            const ACTIVITY_LABELS = {
+                rest: '🛌 Rest',
+                practice: '🏏 Practice',
+                match: '🏆 Match Day',
+                recovery: '💪 Recovery',
+            };
+
+            const ACTIVITY_BADGES = {
+                rest: 'badge-rest',
+                practice: 'badge-practice',
+                match: 'badge-match',
+                recovery: 'badge-recovery',
+            };
+
+            const ACTIVITY_FACTORS = {
+                rest: 1.2,
+                practice: 1.6,
+                match: 2.0,
+                recovery: 1.8,
+            };
+
+            // ============================================================
+            // STATE
+            // ============================================================
+            let state = {
+                profile: { name: 'Siddhi', weight: 50, height: 160 },
+                foods: [...DEFAULT_FOODS],
+                workouts: JSON.parse(JSON.stringify(DEFAULT_WORKOUTS)),
+                categoryOrder: ['General', 'Conditioning', 'Skill', 'Rest / Recovery'],
+                today: new Date().toISOString().slice(0, 10),
+                dayLog: null,
+                dateIndex: [],
+                historyCache: {},
+                qty: {},
+                sheetUrl: '',
+                matchDate: null,
+                darkMode: false,
+                editingCategory: null,
+                localTemplate: null,
+                isEditing: false,
+                streak: 0,
+                voiceSupported: false,
+                sleepData: null,
+                activity: 'practice',
+                factor: 1.6,
+                isManualProtein: false,
+                manualTarget: null,
+            };
+
+            // ============================================================
+            // STORAGE HELPERS
+            // ============================================================
+            function storeGet(key, fallback) {
+                try { const raw = localStorage.getItem('siddhi_' + key); return raw !== null ? JSON.parse(raw) :
+                    fallback; } catch { return fallback; }
+            }
+
+            function storeSet(key, value) {
+                try { localStorage.setItem('siddhi_' + key, JSON.stringify(value)); } catch (e) { console.warn(
+                        'Store failed:', key, e); }
+            }
+
+            function todayKey() { return state.today; }
+
+            function genId() { return Math.random().toString(36).slice(2, 9); }
+
+            function round1(n) { return Math.round(n * 10) / 10; }
+
+            function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;',
+                        '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+            function timeToMinutes(t) {
+                if (!t) return 0;
+                const parts = t.split(':');
+                return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+            }
+
+            function formatTimeDisplay(t) {
+                if (!t) return '--:--';
+                const h = parseInt(t.split(':')[0]);
+                const m = t.split(':')[1];
+                const ampm = h >= 12 ? 'PM' : 'AM';
+                const h12 = h % 12 || 12;
+                return h12 + ':' + m + ' ' + ampm;
+            }
+
+            // ============================================================
+            // PROTEIN CALCULATOR
+            // ============================================================
+            function getProteinTarget() {
+                if (state.isManualProtein && state.manualTarget) {
+                    return state.manualTarget;
+                }
+                const weight = state.profile.weight || 50;
+                let factor = state.factor;
+                const activityFactor = ACTIVITY_FACTORS[state.activity] || 1.6;
+                factor = activityFactor;
+                state.factor = factor;
+                let target = Math.round(weight * factor * 10) / 10;
+                if (state.activity === 'match') {
+                    target = Math.round(target * 1.2 * 10) / 10;
+                }
+                return target;
+            }
+
+            function getProteinConsumed() {
+                const log = state.dayLog;
+                return round1(log.foods.reduce((s, f) => s + f.protein, 0) + (log.supplementG || 0) * (log.supplementPct ||
+                    0.75));
+            }
+
+            function getProteinProgress() {
+                const target = getProteinTarget();
+                const consumed = getProteinConsumed();
+                const pct = target > 0 ? Math.min(100, Math.round((consumed / target) * 100)) : 0;
+                return { target, consumed, remaining: Math.max(0, Math.round((target - consumed) * 10) / 10), pct };
+            }
+
+            // ============================================================
+            // SLEEP TRACKER
+            // ============================================================
+            function getSleepData() {
+                const key = todayKey();
+                const data = storeGet('sleep_' + key, null);
+                if (data) { state.sleepData = data; return data; }
+                const autoData = storeGet('sleep_auto_' + key, null);
+                if (autoData && autoData.bedTime && autoData.wakeTime) {
+                    const hours = calcSleepHours(autoData.bedTime, autoData.wakeTime);
+                    const quality = getSleepQuality(hours);
+                    const score = calcSleepScore(hours, quality);
+                    const data = { date: key, bedTime: autoData.bedTime, wakeTime: autoData.wakeTime, hours: hours,
+                        quality: quality, score: score, autoDetected: true };
+                    storeSet('sleep_' + key, data);
+                    state.sleepData = data;
+                    return data;
+                }
+                return null;
+            }
+
+            function calcSleepHours(bed, wake) {
+                if (!bed || !wake) return 0;
+                const bedM = timeToMinutes(bed);
+                let wakeM = timeToMinutes(wake);
+                if (wakeM <= bedM) wakeM += 1440;
+                return Math.round(((wakeM - bedM) / 60) * 10) / 10;
+            }
+
+            function calcSleepScore(hours, quality) {
+                let score = 0;
+                if (hours >= 7 && hours <= 9) score += 70;
+                else if (hours >= 6 && hours < 7) score += 50;
+                else if (hours >= 9 && hours < 10) score += 50;
+                else if (hours >= 5 && hours < 6) score += 30;
+                else if (hours < 5) score += 10;
+                else if (hours >= 10) score += 40;
+                if (quality === 'Excellent') score += 30;
+                else if (quality === 'Good') score += 20;
+                else if (quality === 'Average') score += 10;
+                return Math.min(100, Math.max(0, Math.round(score)));
+            }
+
+            function getSleepQuality(hours) {
+                if (hours >= 8) return 'Excellent';
+                if (hours >= 7) return 'Good';
+                if (hours >= 6) return 'Average';
+                return 'Poor';
+            }
+
+            function getSleepEmoji(score) {
+                if (score >= 80) return '😴💤';
+                if (score >= 60) return '😌';
+                if (score >= 40) return '😐';
+                return '🥱';
+            }
+
+            // ============================================================
+            // SCREEN DETECTION
+            // ============================================================
+            let lastScreenOffTime = null;
+            let isScreenOff = false;
+
+            function initSleepDetection() {
+                document.addEventListener('visibilitychange', handleVisibilityChange);
+                window.addEventListener('pagehide', () => {
+                    if (isScreenOff && lastScreenOffTime) {
+                        storeSet('sleep_pending', { bedTime: lastScreenOffTime.toISOString() });
+                    }
+                });
+                if (document.hidden) {
+                    lastScreenOffTime = new Date();
+                    isScreenOff = true;
+                    storeSet('sleep_last_off', lastScreenOffTime.toISOString());
+                } else {
+                    const lastOff = storeGet('sleep_last_off', null);
+                    if (lastOff) {
+                        const offTime = new Date(lastOff);
+                        const now = new Date();
+                        const diff = (now - offTime) / (1000 * 60 * 60);
+                        if (diff > 1.5 && diff < 14) {
+                            detectSleepEnd(offTime, now);
+                        }
+                        storeSet('sleep_last_off', null);
+                    }
+                }
+            }
+
+            function handleVisibilityChange() {
+                if (document.hidden) {
+                    lastScreenOffTime = new Date();
+                    isScreenOff = true;
+                    storeSet('sleep_last_off', lastScreenOffTime.toISOString());
+                } else {
+                    const now = new Date();
+                    isScreenOff = false;
+                    const lastOff = storeGet('sleep_last_off', null);
+                    if (lastOff) {
+                        const offTime = new Date(lastOff);
+                        const diff = (now - offTime) / (1000 * 60 * 60);
+                        if (diff > 1.5 && diff < 14) {
+                            detectSleepEnd(offTime, now);
+                        }
+                        storeSet('sleep_last_off', null);
+                    }
+                }
+            }
+
+            function detectSleepEnd(bedTime, wakeTime) {
+                const bedStr = bedTime.toTimeString().slice(0, 5);
+                const wakeStr = wakeTime.toTimeString().slice(0, 5);
+                const hours = calcSleepHours(bedStr, wakeStr);
+                if (hours < 2) return;
+                const quality = getSleepQuality(hours);
+                const score = calcSleepScore(hours, quality);
+                const data = { bedTime: bedStr, wakeTime: wakeStr, hours, quality, score, autoDetected: true };
+                storeSet('sleep_auto_' + todayKey(), data);
+                const fullData = { date: todayKey(), bedTime: bedStr, wakeTime: wakeStr, hours, quality, score,
+                    autoDetected: true };
+                storeSet('sleep_' + todayKey(), fullData);
+                state.sleepData = fullData;
+                flash('😴 Auto-detected sleep: ' + hours + ' hours');
+                renderAll();
+            }
+
+            // ============================================================
+            // SCORE CALCULATIONS
+            // ============================================================
+            function calculateDailyScore() {
+                const log = state.dayLog;
+                const sleep = state.sleepData || { hours: 0, score: 0 };
+                const protein = getProteinProgress();
+
+                const proteinScore = protein.pct;
+                const waterScore = Math.min(100, Math.round((log.water / Math.max(log.waterTarget, 1)) * 100));
+                const done = log.exercises.filter(e => e.done).length;
+                const total = log.exercises.length || 1;
+                const workoutScore = Math.min(100, Math.round((done / total) * 100));
+                const sleepScore = sleep.score || 0;
+
+                const overall = Math.round(
+                    proteinScore * 0.35 +
+                    waterScore * 0.25 +
+                    workoutScore * 0.20 +
+                    sleepScore * 0.20
+                );
+
+                return {
+                    overall: Math.min(100, Math.max(0, overall)),
+                    protein: proteinScore,
+                    water: waterScore,
+                    workout: workoutScore,
+                    sleep: sleepScore,
+                    details: {
+                        proteinG: protein.consumed,
+                        proteinTarget: protein.target,
+                        waterMl: log.water,
+                        waterTarget: log.waterTarget,
+                        workoutDone: done,
+                        workoutTotal: total,
+                        sleepHours: sleep.hours || 0,
+                    }
+                };
+            }
+
+            function getWeekScore(weekOffset) {
+                const today = new Date(todayKey());
+                const dayOfWeek = today.getDay() || 7;
+                const startOffset = (dayOfWeek - 1) + (weekOffset * 7);
+                const startDate = new Date(today);
+                startDate.setDate(today.getDate() - startOffset);
+
+                let totalScore = 0;
+                let count = 0;
+                let scores = [];
+
+                for (let i = 0; i < 7; i++) {
+                    const d = new Date(startDate);
+                    d.setDate(startDate.getDate() + i);
+                    const key = d.toISOString().slice(0, 10);
+                    let log = key === state.today ? state.dayLog : state.historyCache[key];
+                    if (!log) log = storeGet('day_' + key, null);
+                    if (!log) continue;
+
+                    const sleep = storeGet('sleep_' + key, null);
+                    const sleepScore = sleep ? sleep.score : 0;
+
+                    const p = round1(log.foods.reduce((s, f) => s + f.protein, 0) + (log.supplementG || 0) * (log
+                        .supplementPct || 0.75));
+                    const target = log.proteinTarget || getProteinTarget();
+                    const proteinScore = target > 0 ? Math.min(100, Math.round((p / target) * 100)) : 0;
+                    const waterScore = Math.min(100, Math.round((log.water / Math.max(log.waterTarget, 1)) * 100));
+                    const done = log.exercises.filter(e => e.done).length;
+                    const total = log.exercises.length || 1;
+                    const workoutScore = Math.min(100, Math.round((done / total) * 100));
+
+                    const dayScore = Math.round(
+                        proteinScore * 0.35 +
+                        waterScore * 0.25 +
+                        workoutScore * 0.20 +
+                        (sleepScore || 0) * 0.20
+                    );
+                    scores.push(Math.min(100, Math.max(0, dayScore)));
+                    totalScore += scores[scores.length - 1];
+                    count++;
+                }
+
+                const avg = count > 0 ? Math.round(totalScore / count) : 0;
+                return { avg, scores, count, days: scores.length };
+            }
+
+            function getMonthScores() {
+                const weeks = [];
+                for (let i = 0; i < 4; i++) {
+                    const w = getWeekScore(i);
+                    weeks.push({ week: i + 1, score: w.avg, days: w.days, scores: w.scores });
+                }
+                const valid = weeks.filter(w => w.days > 0);
+                const monthlyAvg = valid.length > 0 ? Math.round(valid.reduce((s, w) => s + w.score, 0) / valid.length) :
+                    0;
+                return { weeks, monthlyAvg, validCount: valid.length };
+            }
+
+            // ============================================================
+            // ALERTS & SUGGESTIONS
+            // ============================================================
+            function getAlerts() {
+                const log = state.dayLog;
+                const sleep = state.sleepData || { hours: 0, score: 0 };
+                const protein = getProteinProgress();
+                const alerts = [];
+
+                if (protein.remaining > 20) {
+                    alerts.push({ type: 'danger',
+                    msg: `💪 Protein कमी! अजून ${protein.remaining}g हवं.` });
+                } else if (protein.remaining > 10) {
+                    alerts.push({ type: 'warning', msg: `💪 Protein थोडं कमी आहे. अजून ${protein.remaining}g घ्या.` });
+                } else if (protein.remaining <= 0) {
+                    alerts.push({ type: 'success', msg: `💪 Protein target पूर्ण! ${protein.consumed}g झालं.` });
+                }
+
+                const wRemaining = Math.max(0, log.waterTarget - log.water);
+                if (wRemaining > 1000) {
+                    alerts.push({ type: 'danger',
+                    msg: `💧 पाणी कमी! अजून ${Math.round(wRemaining/1000)}L प्यायचं आहे.` });
+                } else if (wRemaining > 300) {
+                    alerts.push({ type: 'warning', msg: `💧 अजून ${Math.round(wRemaining)}ml पाणी प्या.` });
+                } else if (wRemaining <= 0) {
+                    alerts.push({ type: 'success', msg: `💧 Water target पूर्ण! ${(log.water/1000).toFixed(1)}L.` });
+                }
+
+                const done = log.exercises.filter(e => e.done).length;
+                const total = log.exercises.length;
+                const rem = total - done;
+                if (rem > 0 && total > 0) {
+                    alerts.push({ type: 'warning', msg: `🏋️ अजून ${rem} workout बाकी आहेत.` });
+                } else if (total > 0 && done === total) {
+                    alerts.push({ type: 'success', msg: `🏋️ सगळे ${total} workout complete!` });
+                }
+
+                if (sleep.hours > 0 && sleep.hours < 6) {
+                    alerts.push({ type: 'danger', msg: `😴 फक्त ${sleep.hours}h झोप! आज लवकर झोपा.` });
+                } else if (sleep.hours >= 8) {
+                    alerts.push({ type: 'success', msg: `😴 ${sleep.hours}h झोप! Perfect recovery.` });
+                } else if (!sleep.hours) {
+                    alerts.push({ type: 'warning', msg: '😴 Sleep auto-detect होईल जेव्हा screen 1.5+ तास off असेल.' });
+                }
+
+                const score = calculateDailyScore();
+                if (score.overall < 50) {
+                    alerts.push({ type: 'danger', msg: `⭐ Score ${score.overall}% — focus on protein, water & sleep!` });
+                } else if (score.overall < 70) {
+                    alerts.push({ type: 'warning', msg: `⭐ Score ${score.overall}% — चांगले करता, अजून सुधारणा शक्य आहे.` });
+                } else if (score.overall >= 85) {
+                    alerts.push({ type: 'success', msg: `⭐ ${score.overall}% — Excellent! Keep it up!` });
+                }
+
+                return alerts;
+            }
+
+            function getSmartSuggestions() {
+                const log = state.dayLog;
+                const sleep = state.sleepData || { hours: 0 };
+                const protein = getProteinProgress();
+                const wRemaining = Math.max(0, log.waterTarget - log.water);
+                const done = log.exercises.filter(e => e.done).length;
+                const total = log.exercises.length;
+                const suggestions = [];
+
+                if (protein.remaining > 20) {
+                    const best = state.foods.filter(f => f.protein > 5).sort((a, b) => b.protein - a.protein)[0];
+                    if (best) {
+                        const need = Math.ceil(protein.remaining / best.protein);
+                        suggestions.push(`🍗 ${need} ${best.name} खा (${best.protein}g protein each).`);
+                    }
+                }
+
+                if (wRemaining > 500) {
+                    suggestions.push(`💧 ${Math.round(wRemaining)}ml पाणी प्या — ${Math.ceil(wRemaining/250)} ग्लास.`);
+                }
+
+                if (total - done > 0) {
+                    const pending = log.exercises.filter(e => !e.done).map(e => e.name).join(', ');
+                    suggestions.push(`🏋️ ${total - done} workouts बाकी: ${pending}`);
+                }
+
+                if (sleep.hours > 0 && sleep.hours < 6) {
+                    suggestions.push(`😴 आज ${sleep.hours}h झोप — आज रात्री 1 तास लवकर झोपा.`);
+                }
+
+                if (state.streak > 3) {
+                    suggestions.push(`🔥 ${state.streak} दिवसांची streak! Keep going!`);
+                }
+
+                if (state.matchDate) {
+                    const days = Math.ceil((new Date(state.matchDate) - new Date()) / (1000 * 60 * 60 * 24));
+                    if (days > 0 && days <= 7) {
+                        suggestions.push(`🏏 Match in ${days} days! Focus on recovery & nutrition.`);
+                    }
+                }
+
+                const monthData = getMonthScores();
+                if (monthData.validCount > 0) {
+                    const avg = monthData.monthlyAvg;
+                    if (avg < 60) {
+                        suggestions.push(`📊 Monthly avg ${avg}% — protein आणि water वर focus करा.`);
+                    } else if (avg >= 80) {
+                        suggestions.push(`📊 Monthly avg ${avg}% — Excellent month! 🎉`);
+                    }
+                }
+
+                return suggestions.length ? suggestions : ['🌟 Everything looks great! Keep it up!'];
+            }
+
+            // ============================================================
+            // INIT
+            // ============================================================
+            async function init() {
+                state.profile = storeGet('profile', state.profile);
+                state.foods = storeGet('foods', DEFAULT_FOODS);
+                const w = storeGet('workouts', null);
+                if (w) state.workouts = w;
+                state.categoryOrder = storeGet('categoryOrder', ['General', 'Conditioning', 'Skill', 'Rest / Recovery']);
+                state.sheetUrl = storeGet('sheetUrl', '');
+                state.matchDate = storeGet('matchDate', null);
+                state.darkMode = storeGet('darkMode', false);
+                state.activity = storeGet('activity', 'practice');
+                state.factor = storeGet('factor', 1.6);
+                state.isManualProtein = storeGet('isManualProtein', false);
+                state.manualTarget = storeGet('manualTarget', null);
+
+                const key = todayKey();
+                let log = storeGet('day_' + key, null);
+                const idx = storeGet('dateIndex', []);
+
+                if (!log) {
+                    const cat = state.categoryOrder[0] || 'General';
+                    const exList = state.workouts[cat] || [];
+                    const target = getProteinTarget();
+                    log = {
+                        date: key,
+                        category: cat,
+                        proteinTarget: target,
+                        waterTarget: 3000,
+                        water: 0,
+                        supplementG: 0,
+                        supplementPct: 0.75,
+                        note: '',
+                        foods: [],
+                        exercises: exList.map(e => ({ ...e, done: false, actual: '' })),
+                    };
+                    if (!idx.includes(key)) { idx.push(key);
+                        storeSet('dateIndex', idx); }
+                    storeSet('day_' + key, log);
+                } else {
+                    if (!state.isManualProtein) {
+                        log.proteinTarget = getProteinTarget();
+                        storeSet('day_' + key, log);
+                    }
+                }
+
+                state.dayLog = log;
+                state.dateIndex = idx;
+                state.historyCache = {};
+                state.sleepData = getSleepData();
+                state.streak = calculateStreak();
+
+                applyTheme(state.darkMode);
+                state.voiceSupported = 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window;
+                initSleepDetection();
+                renderAll();
+                bindEvents();
+                if (state.sheetUrl) scheduleSync();
+            }
+
+            // ============================================================
+            // STREAK
+            // ============================================================
+            function calculateStreak() {
+                const dates = state.dateIndex.slice().sort();
+                let streak = 0;
+                const today = new Date(todayKey());
+                for (let i = dates.length - 1; i >= 0; i--) {
+                    const d = new Date(dates[i]);
+                    const diff = (today - d) / (1000 * 60 * 60 * 24);
+                    if (diff < 1 && dates[i] === todayKey()) { streak++; continue; }
+                    if (diff < 2) { streak++; continue; }
+                    break;
+                }
+                return streak;
+            }
+
+            // ============================================================
+            // THEME
+            // ============================================================
+            function applyTheme(dark) {
+                state.darkMode = dark;
+                document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+                storeSet('darkMode', dark);
+                const toggle = document.getElementById('darkModeToggle');
+                if (toggle) toggle.checked = dark;
+            }
+
+            // ============================================================
+            // TOAST
+            // ============================================================
+            let toastTimer = null;
+
+            function flash(msg) {
+                const el = document.getElementById('toast');
+                el.textContent = msg;
+                el.style.display = 'block';
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => { el.style.display = 'none'; }, 2500);
+            }
+
+            // ============================================================
+            // PERSIST
+            // ============================================================
+            function persistDay() {
+                storeSet('day_' + state.dayLog.date, state.dayLog);
+                scheduleSync();
+                renderAll();
+            }
+
+            // ============================================================
+            // SYNC
+            // ============================================================
+            let syncTimer = null;
+
+            function scheduleSync() {
+                if (!state.sheetUrl) return;
+                clearTimeout(syncTimer);
+                syncTimer = setTimeout(syncToSheet, 1500);
+            }
+
+            async function syncToSheet(manual = false) {
+                if (!state.sheetUrl) { if (manual) flash('No sheet URL set'); return; }
+                const log = state.dayLog;
+                const consumed = getProteinConsumed();
+                const sleep = state.sleepData || { hours: 0, score: 0 };
+                const score = calculateDailyScore();
+                const payload = {
+                    date: log.date,
+                    category: log.category || '',
+                    activity: state.activity,
+                    protein_target_g: getProteinTarget(),
+                    protein_consumed_g: consumed,
+                    water_ml: log.water,
+                    water_target_ml: log.waterTarget,
+                    exercises_done: log.exercises.filter(e => e.done).length,
+                    exercises_total: log.exercises.length,
+                    sleep_hours: sleep.hours || 0,
+                    sleep_score: sleep.score || 0,
+                    daily_score: score.overall,
+                    note: log.note || '',
+                };
+                try {
+                    await fetch(state.sheetUrl, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                        body: JSON.stringify(payload),
+                    });
+                    if (manual) flash('✅ Synced');
+                } catch (e) { console.error('Sync failed:', e); if (manual) flash('❌ Sync failed'); }
+            }
+
+            // ============================================================
+            // VOICE
+            // ============================================================
+            let recognition = null;
+            let isListening = false;
+
+            function setupVoice() {
+                const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+                if (!SR) { document.getElementById('voiceStatus').textContent = '❌ Not supported'; return; }
+                recognition = new SR();
+                recognition.lang = 'en-US';
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.onresult = function(e) {
+                    const text = e.results[0][0].transcript;
+                    document.getElementById('voiceResult').textContent = '🗣️ "' + text + '"';
+                    handleVoiceCommand(text);
+                    isListening = false;
+                    document.getElementById('voiceBtn').classList.remove('listening');
+                    document.getElementById('voiceBtn').textContent = '🎤';
+                    document.getElementById('voiceStatus').textContent = '✅ Done';
+                };
+                recognition.onerror = function(e) {
+                    isListening = false;
+                    document.getElementById('voiceBtn').classList.remove('listening');
+                    document.getElementById('voiceBtn').textContent = '🎤';
+                    document.getElementById('voiceStatus').textContent = '❌ Error: ' + e.error;
+                };
+                recognition.onend = function() {
+                    isListening = false;
+                    document.getElementById('voiceBtn').classList.remove('listening');
+                    document.getElementById('voiceBtn').textContent = '🎤';
+                };
+            }
+
+            function toggleVoice() {
+                if (!recognition) { flash('Voice not supported'); return; }
+                if (isListening) {
+                    recognition.stop();
+                    isListening = false;
+                    document.getElementById('voiceBtn').classList.remove('listening');
+                    document.getElementById('voiceBtn').textContent = '🎤';
+                    document.getElementById('voiceStatus').textContent = '⏹️ Stopped';
+                    return;
+                }
+                try {
+                    recognition.start();
+                    isListening = true;
+                    document.getElementById('voiceBtn').classList.add('listening');
+                    document.getElementById('voiceBtn').textContent = '⏹️';
+                    document.getElementById('voiceStatus').textContent = '🔴 Listening...';
+                    document.getElementById('voiceResult').textContent = '';
+                } catch (e) { flash('Could not start mic'); }
+            }
+
+            function handleVoiceCommand(text) {
+                const lower = text.toLowerCase();
+                const foodMatch = lower.match(/(?:ate|had|ate\s+)(\d*\.?\d*)\s*(.+)/);
+                if (foodMatch) {
+                    const qty = parseFloat(foodMatch[1]) || 1;
+                    const foodName = foodMatch[2].trim();
+                    const found = state.foods.find(f => f.name.toLowerCase().includes(foodName) || foodName.includes(f
+                        .name.toLowerCase()));
+                    if (found) { addFoodEntry(found.id, qty);
+                        flash('✅ ' + qty + ' ' + found.name); return; }
+                }
+                const waterMatch = lower.match(/(\d+)\s*ml\s*(?:water)?/);
+                if (waterMatch) { const ml = parseFloat(waterMatch[1]);
+                    addWater(ml);
+                    flash('✅ +' + ml + 'ml water'); return; }
+                const sleepMatch = lower.match(/slept\s*(\d+\.?\d*)\s*(?:hours?)?/);
+                if (sleepMatch) {
+                    const h = parseFloat(sleepMatch[1]);
+                    if (h > 1 && h < 14) {
+                        const now = new Date();
+                        const bed = new Date(now);
+                        bed.setHours(bed.getHours() - h);
+                        saveManualSleep(bed.toTimeString().slice(0, 5), now.toTimeString().slice(0, 5));
+                        return;
+                    }
+                }
+                const exMatch = lower.match(/(?:did|completed|done)\s+(.+)/);
+                if (exMatch) {
+                    const exName = exMatch[1].trim();
+                    const found = state.dayLog.exercises.find(e => e.name.toLowerCase().includes(exName) || exName
+                        .includes(e.name.toLowerCase()));
+                    if (found) { toggleExercise(found.id);
+                        flash('✅ Toggled ' + found.name); return; }
+                }
+                flash('🤔 Try: "I ate 2 eggs" or "I slept 7 hours"');
+            }
+
+            // ============================================================
+            // MUTATIONS
+            // ============================================================
+            function addFoodEntry(foodId, qty) {
+                const food = state.foods.find(f => f.id === foodId);
+                if (!food || !qty || qty <= 0) return;
+                state.dayLog.foods.push({
+                    id: genId(),
+                    foodId: food.id,
+                    name: food.name,
+                    qty: qty,
+                    protein: round1(food.protein * qty),
+                    time: new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })
+                });
+                persistDay();
+                renderAll();
+            }
+
+            function removeFoodEntry(id) {
+                state.dayLog.foods = state.dayLog.foods.filter(f => f.id !== id);
+                persistDay();
+                renderAll();
+            }
+
+            function addWater(ml) {
+                state.dayLog.water = Math.max(0, (state.dayLog.water || 0) + ml);
+                persistDay();
+                renderAll();
+            }
+
+            function addSupplement(g) {
+                state.dayLog.supplementG = (state.dayLog.supplementG || 0) + g;
+                persistDay();
+                flash('+' + g + 'g supplement');
+                renderAll();
+            }
+
+            function toggleExercise(id) {
+                const ex = state.dayLog.exercises.find(e => e.id === id);
+                if (ex) ex.done = !ex.done;
+                persistDay();
+                renderAll();
+            }
+
+            function setExerciseActual(id, val) {
+                const ex = state.dayLog.exercises.find(e => e.id === id);
+                if (ex) ex.actual = val;
+                persistDay();
+            }
+
+            function setWorkoutPlan(category) {
+                const exList = state.workouts[category];
+                if (!exList) return;
+                state.dayLog.category = category;
+                state.dayLog.exercises = exList.map(e => {
+                    const existing = state.dayLog.exercises.find(x => x.id === e.id);
+                    return existing || { ...e, done: false, actual: '' };
+                });
+                persistDay();
+                flash('Switched to ' + category);
+                renderAll();
+            }
+
+            function saveWorkoutPlan(category, exercises) {
+                state.workouts[category] = exercises.map(e => ({ ...e, id: e.id || genId() }));
+                storeSet('workouts', state.workouts);
+                if (category === state.dayLog.category) setWorkoutPlan(category);
+                flash('✅ Saved ' + category);
+                renderAll();
+            }
+
+            function addWorkoutCategory(name) {
+                if (state.workouts[name]) { flash('Already exists'); return null; }
+                state.workouts[name] = [];
+                state.categoryOrder.push(name);
+                storeSet('workouts', state.workouts);
+                storeSet('categoryOrder', state.categoryOrder);
+                flash('Added: ' + name);
+                renderAll();
+                return name;
+            }
+
+            function deleteWorkoutCategory(name) {
+                if (state.categoryOrder.length <= 1) { flash('Keep at least one'); return; }
+                delete state.workouts[name];
+                state.categoryOrder = state.categoryOrder.filter(c => c !== name);
+                storeSet('workouts', state.workouts);
+                storeSet('categoryOrder', state.categoryOrder);
+                if (state.dayLog.category === name) setWorkoutPlan(state.categoryOrder[0]);
+                flash('Deleted: ' + name);
+                renderAll();
+            }
+
+            function saveManualSleep(bed, wake) {
+                if (!bed || !wake) { flash('Enter both times'); return; }
+                const hours = calcSleepHours(bed, wake);
+                if (hours < 1) { flash('Too short'); return; }
+                const quality = getSleepQuality(hours);
+                const score = calcSleepScore(hours, quality);
+                const data = { date: todayKey(), bedTime: bed, wakeTime: wake, hours, quality, score,
+                autoDetected: false };
+                storeSet('sleep_' + todayKey(), data);
+                state.sleepData = data;
+                flash('✅ Sleep: ' + hours + ' hours');
+                document.getElementById('sleepManualBox').style.display = 'none';
+                renderAll();
+            }
+
+            function resetSleep() {
+                storeSet('sleep_' + todayKey(), null);
+                storeSet('sleep_auto_' + todayKey(), null);
+                state.sleepData = null;
+                flash('🔄 Sleep reset');
+                renderAll();
+            }
+
+            // ============================================================
+            // PROTEIN FUNCTIONS
+            // ============================================================
+            function setActivity(activity) {
+                state.activity = activity;
+                storeSet('activity', activity);
+                if (!state.isManualProtein) {
+                    state.dayLog.proteinTarget = getProteinTarget();
+                    storeSet('day_' + state.dayLog.date, state.dayLog);
+                }
+                renderAll();
+                flash('Activity: ' + ACTIVITY_LABELS[activity]);
+            }
+
+            function setWeight(weight) {
+                state.profile.weight = parseFloat(weight) || 50;
+                storeSet('profile', state.profile);
+                if (!state.isManualProtein) {
+                    state.dayLog.proteinTarget = getProteinTarget();
+                    storeSet('day_' + state.dayLog.date, state.dayLog);
+                }
+                renderAll();
+            }
+
+            function setManualProtein(target) {
+                const v = parseFloat(target);
+                if (!v || v < 20) { flash('Enter valid target (min 20g)'); return; }
+                state.isManualProtein = true;
+                state.manualTarget = v;
+                state.dayLog.proteinTarget = v;
+                storeSet('isManualProtein', true);
+                storeSet('manualTarget', v);
+                storeSet('day_' + state.dayLog.date, state.dayLog);
+                renderAll();
+                flash('✅ Manual target: ' + v + 'g');
+            }
+
+            function setAutoProtein() {
+                state.isManualProtein = false;
+                state.manualTarget = null;
+                storeSet('isManualProtein', false);
+                storeSet('manualTarget', null);
+                state.dayLog.proteinTarget = getProteinTarget();
+                storeSet('day_' + state.dayLog.date, state.dayLog);
+                renderAll();
+                flash('🔄 Auto target: ' + state.dayLog.proteinTarget + 'g');
+            }
+
+            function resetConsumed() {
+                state.dayLog.foods = [];
+                state.dayLog.supplementG = 0;
+                persistDay();
+                flash('🔄 Reset consumed protein');
+                renderAll();
+            }
+
+            // ============================================================
+            // RENDER
+            // ============================================================
+            function renderAll() {
+                renderHeader();
+                renderHome();
+                renderDiet();
+                renderWorkout();
+                renderAnalytics();
+                renderProfile();
+                updateTabs();
+            }
+
+            function renderHeader() {
+                const log = state.dayLog;
+                const protein = getProteinProgress();
+                const score = calculateDailyScore();
+                const sleep = state.sleepData || { hours: 0 };
+                const target = getProteinTarget();
+
+                document.getElementById('hdrProtein').innerHTML = protein.consumed + '<small>g</small>';
+                document.getElementById('hdrProteinBar').style.width = protein.pct + '%';
+                document.getElementById('hdrWater').innerHTML = (log.water / 1000).toFixed(1) + '<small>L</small>';
+                document.getElementById('hdrWaterBar').style.width = score.water + '%';
+                document.getElementById('hdrSleep').innerHTML = (sleep.hours || 0) + '<small>h</small>';
+                document.getElementById('hdrSleepBar').style.width = score.sleep + '%';
+                document.getElementById('hdrScore').innerHTML = score.overall + '<small>%</small>';
+                document.getElementById('hdrScoreBar').style.width = score.overall + '%';
+                document.getElementById('hdrFactor').innerHTML = state.factor + '<small>x</small>';
+                document.getElementById('hdrFactorBar').style.width = Math.min(100, (state.factor / 2.5) * 100) + '%';
+
+                const badge = document.getElementById('activityBadge');
+                badge.textContent = ACTIVITY_LABELS[state.activity] || 'Practice';
+                badge.className = 'badge ' + (ACTIVITY_BADGES[state.activity] || 'badge-practice');
+
+                if (state.matchDate) {
+                    const days = Math.ceil((new Date(state.matchDate) - new Date()) / (1000 * 60 * 60 * 24));
+                    document.getElementById('countdown').textContent = '🏏 ' + (days > 0 ? days + ' दिवस' : '🔥 Match Day!');
+                } else {
+                    document.getElementById('countdown').textContent = '🏏 Set Date';
+                }
+            }
+
+            function renderHome() {
+                const protein = getProteinProgress();
+                const color = protein.pct >= 90 ? '#2ecc71' : protein.pct >= 50 ? '#E8A33D' : '#e74c3c';
+                const ring = document.getElementById('proteinRing');
+                ring.style.background = color;
+                document.getElementById('ringPercent').textContent = protein.pct + '%';
+                document.getElementById('displayTarget').textContent = protein.target + 'g';
+                document.getElementById('displayConsumed').textContent = protein.consumed + 'g';
+                document.getElementById('displayRemaining').textContent = protein.remaining + 'g';
+                document.getElementById('displayFactor').textContent = state.isManualProtein ? '✏️ Manual' : state.factor +
+                    'g/kg';
+                document.getElementById('proteinBar').style.width = protein.pct + '%';
+
+                const sourceBadge = document.getElementById('proteinSourceBadge');
+                sourceBadge.textContent = state.isManualProtein ? '✏️ Manual' : '🤖 Auto';
+                sourceBadge.style.color = state.isManualProtein ? 'var(--accent)' : 'var(--success)';
+
+                document.getElementById('proteinManualBox').style.display = state.isManualProtein ? 'block' : 'none';
+                if (state.isManualProtein) {
+                    document.getElementById('proteinManualInput').value = state.manualTarget || '';
+                }
+
+                document.querySelectorAll('.activity-chip').forEach(chip => {
+                    chip.classList.toggle('active', chip.dataset.activity === state.activity);
+                });
+                document.getElementById('weightInput').value = state.profile.weight || 50;
+                document.getElementById('factorSelect').value = state.factor;
+
+                const score = calculateDailyScore();
+                const scolor = score.overall >= 80 ? '#2ecc71' : score.overall >= 60 ? '#f39c12' : '#e74c3c';
+                document.getElementById('todayScoreDisplay').innerHTML = `
+                    <div class="score-ring">
+                        <div class="score-circle" style="background:${scolor}">
+                            <span class="num">${score.overall}%</span>
+                            <span class="lbl">Score</span>
+                        </div>
+                        <div class="score-details">
+                            <div class="row"><span>💪 Protein</span><span class="val">${score.protein}%</span></div>
+                            <div class="row"><span>💧 Water</span><span class="val">${score.water}%</span></div>
+                            <div class="row"><span>🏋️ Workout</span><span class="val">${score.workout}%</span></div>
+                            <div class="row"><span>😴 Sleep</span><span class="val">${score.sleep}%</span></div>
+                        </div>
+                    </div>
+                `;
+
+                const alerts = getAlerts();
+                document.getElementById('alertsContainer').innerHTML = alerts.map(a =>
+                    `<div class="alert-item ${a.type}">${a.msg}</div>`
+                ).join('') || '<div class="text-muted">✅ सगळं चांगलं आहे!</div>';
+
+                document.getElementById('waterTodayDisplay').textContent = state.dayLog.water + 'ml';
+                document.getElementById('waterTargetDisplay').textContent = state.dayLog.waterTarget + 'ml';
+
+                const suggestions = getSmartSuggestions();
+                document.getElementById('smartSuggestions').innerHTML = suggestions.map(s =>
+                    `<span class="suggestion-chip">${s}</span>`
+                ).join('');
+
+                renderSleepDisplay();
+
+                const checklistData = storeGet('checklist', MATCH_CHECKLIST.map(c => ({ id: genId(), label: c,
+                    done: false })));
+                document.getElementById('checklist').innerHTML = checklistData.map((item, i) =>
+                    `<div class="checklist-item">
+                        <input type="checkbox" ${item.done ? 'checked' : ''} data-check="${i}" />
+                        <span class="label ${item.done ? 'done' : ''}">${item.label}</span>
+                    </div>`
+                ).join('');
+            }
+
+            function renderSleepDisplay() {
+                const sleep = state.sleepData;
+                const container = document.getElementById('sleepDisplay');
+                if (!sleep || !sleep.hours) {
+                    container.innerHTML =
+                        `<div class="text-muted">No sleep data yet. Auto-detects when screen off for 1.5+ hours.</div>`;
+                    return;
+                }
+                const emoji = getSleepEmoji(sleep.score);
+                container.innerHTML = `
+                    <div class="sleep-display">
+                        <div class="sleep-circle" style="background:${sleep.score >= 70 ? '#2ecc71' : sleep.score >= 40 ? '#f39c12' : '#e74c3c'}">${sleep.score}%</div>
+                        <div class="sleep-info">
+                            <div class="hours">${emoji} ${sleep.hours} hours</div>
+                            <div class="desc">${sleep.quality} ${sleep.autoDetected ? '🔍 auto' : '✏️ manual'}</div>
+                            <div class="time">🛏️ ${formatTimeDisplay(sleep.bedTime)} → ☀️ ${formatTimeDisplay(sleep.wakeTime)}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            function renderDiet() {
+                const list = document.getElementById('foodList');
+                list.innerHTML = state.foods.map(f => {
+                    const q = state.qty[f.id] !== undefined ? state.qty[f.id] : 1;
+                    return `
+                        <div class="food-item">
+                            <div><div class="food-name">${esc(f.name)}</div><div class="food-unit">${esc(f.unit)} · ${f.protein}g</div></div>
+                            <div class="qty-control">
+                                <button class="btn btn-ghost btn-xs" data-qty-down="${f.id}">−</button>
+                                <span class="qty">${q}</span>
+                                <button class="btn btn-ghost btn-xs" data-qty-up="${f.id}">+</button>
+                                <button class="btn btn-primary btn-sm" data-add-food="${f.id}">Add</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                const logEl = document.getElementById('todayFoodLog');
+                if (state.dayLog.foods.length === 0) {
+                    logEl.innerHTML = '<span class="text-muted">Nothing logged yet.</span>';
+                } else {
+                    logEl.innerHTML = state.dayLog.foods.slice().reverse().map(f =>
+                        `<div class="food-item">
+                            <span>${f.time} · ${esc(f.name)} x${f.qty}</span>
+                            <span class="flex-center"><strong>${f.protein}g</strong>
+                            <button class="btn btn-ghost btn-xs" data-remove-food="${f.id}">✕</button></span>
+                        </div>`
+                    ).join('');
+                }
+                document.getElementById('suppDisplay').textContent = (state.dayLog.supplementG || 0) + 'g';
+            }
+
+            function renderWorkout() {
+                const select = document.getElementById('workoutPlanSelect');
+                select.innerHTML = state.categoryOrder.map(c =>
+                    `<option value="${esc(c)}" ${c === state.dayLog.category ? 'selected' : ''}>${esc(c)}</option>`
+                ).join('');
+
+                const list = document.getElementById('workoutList');
+                list.innerHTML = state.dayLog.exercises.map(ex =>
+                    `<div class="ex-item">
+                        <div class="flex-between">
+                            <div><div class="ex-name ${ex.done ? 'done' : ''}">${esc(ex.name)}</div>
+                            <div class="ex-target">🎯 ${esc(ex.target)}</div>
+                            ${ex.tip ? `<div class="ex-tip">💡 ${esc(ex.tip)}</div>` : ''}</div>
+                            <button class="btn ${ex.done ? 'btn-primary' : 'btn-ghost'} btn-sm" data-toggle-ex="${ex.id}">${ex.done ? '✅' : 'Mark'}</button>
+                        </div>
+                        <input type="text" class="mt-6" placeholder="Actual" data-ex-actual="${ex.id}" value="${esc(ex.actual || '')}" />
+                    </div>`
+                ).join('');
+
+                const editSelect = document.getElementById('editPlanSelect');
+                const editCat = state.editingCategory || state.dayLog.category || state.categoryOrder[0];
+                editSelect.innerHTML = state.categoryOrder.map(c =>
+                    `<option value="${esc(c)}" ${c === editCat ? 'selected' : ''}>${esc(c)}</option>`
+                ).join('');
+
+                const editor = document.getElementById('planEditor');
+                if (state.isEditing) {
+                    const tpl = state.localTemplate || state.workouts[editCat] || [];
+                    editor.style.display = 'block';
+                    editor.innerHTML = tpl.map((e, i) =>
+                        `<div class="ex-item">
+                            <input type="text" data-tpl-name="${i}" value="${esc(e.name)}" placeholder="Exercise" />
+                            <input type="text" data-tpl-target="${i}" value="${esc(e.target)}" placeholder="Target" class="mt-6" />
+                            <textarea data-tpl-tip="${i}" placeholder="Tip" rows="1">${esc(e.tip || '')}</textarea>
+                            <button class="btn btn-danger btn-xs mt-6" data-tpl-remove="${i}">Remove</button>
+                        </div>`
+                    ).join('') +
+                    `<button class="btn btn-outline btn-sm mt-6" id="tplAddBtn">+ Add</button>
+                     <button class="btn btn-primary btn-sm mt-6" id="tplSaveBtn">💾 Save</button>`;
+                } else {
+                    editor.style.display = 'none';
+                }
+            }
+
+            function renderAnalytics() {
+                const week = getWeekScore(0);
+                const color = week.avg >= 80 ? '#2ecc71' : week.avg >= 60 ? '#f39c12' : '#e74c3c';
+                document.getElementById('weeklyScoreDisplay').innerHTML = `
+                    <div class="score-ring">
+                        <div class="score-circle" style="background:${color};width:64px;height:64px;">
+                            <span class="num">${week.avg}%</span>
+                            <span class="lbl">Weekly</span>
+                        </div>
+                        <div class="score-details">
+                            <div class="row"><span>📅 Days</span><span class="val">${week.days}/7</span></div>
+                            <div class="row"><span>📊 Best</span><span class="val">${week.scores.length ? Math.max(...week.scores) : 0}%</span></div>
+                            <div class="row"><span>📉 Worst</span><span class="val">${week.scores.length ? Math.min(...week.scores) : 0}%</span></div>
+                        </div>
+                    </div>
+                `;
+
+                const weekSuggestions = [];
+                if (week.days < 5) weekSuggestions.push(`📅 फक्त ${week.days} दिवस ट्रॅक केलं — रोज log करा.`);
+                if (week.avg < 60) weekSuggestions.push(`📊 Weekly score ${week.avg}% — protein आणि water वर focus करा.`);
+                else if (week.avg >= 80) weekSuggestions.push(`🌟 Great week! ${week.avg}% — keep it up!`);
+                document.getElementById('weeklySuggestions').innerHTML = weekSuggestions.map(s =>
+                    `<div class="alert-item warning">${s}</div>`
+                ).join('') || '<div class="text-muted">✅ Weekly looks good!</div>';
+
+                const month = getMonthScores();
+                const mColor = month.monthlyAvg >= 80 ? '#2ecc71' : month.monthlyAvg >= 60 ? '#f39c12' : '#e74c3c';
+                document.getElementById('monthlyScoreDisplay').innerHTML = `
+                    <div class="score-ring">
+                        <div class="score-circle" style="background:${mColor};width:64px;height:64px;">
+                            <span class="num">${month.monthlyAvg}%</span>
+                            <span class="lbl">Monthly</span>
+                        </div>
+                        <div class="score-details">
+                            <div class="row"><span>📊 Weeks</span><span class="val">${month.validCount}/4</span></div>
+                            <div class="row"><span>📈 Best</span><span class="val">${Math.max(...month.weeks.map(w => w.score))}%</span></div>
+                            <div class="row"><span>📉 Worst</span><span class="val">${Math.min(...month.weeks.map(w => w.score))}%</span></div>
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('monthGrid').innerHTML = month.weeks.map(w => {
+                    const wColor = w.score >= 80 ? '#2ecc71' : w.score >= 60 ? '#f39c12' : '#e74c3c';
+                    return `
+                        <div class="month-week">
+                            <div class="week-label">Week ${w.week}</div>
+                            <div class="week-score">${w.score}%</div>
+                            <div class="week-bar"><div class="fill" style="width:${w.score}%;background:${wColor};"></div></div>
+                            <div class="text-sm text-muted">${w.days}/7 days</div>
+                        </div>
+                    `;
+                }).join('');
+
+                const monthSuggestions = [];
+                if (month.monthlyAvg < 50) monthSuggestions.push(
+                    `📊 Monthly ${month.monthlyAvg}% — खूप सुधारणा हवी.`);
+                else if (month.monthlyAvg < 70) monthSuggestions.push(
+                    `📊 Monthly ${month.monthlyAvg}% — चांगलं आहे, पण अजून सुधारणा शक्य आहे.`);
+                else if (month.monthlyAvg >= 85) monthSuggestions.push(
+                    `🌟 Excellent month! ${month.monthlyAvg}% — keep this momentum!`);
+                document.getElementById('monthlySuggestions').innerHTML = monthSuggestions.map(s =>
+                    `<div class="alert-item warning">${s}</div>`
+                ).join('') || '<div class="text-muted">✅ Monthly looks great!</div>';
+
+                const allScores = month.weeks.map(w => w.score);
+                const maxVal = Math.max(...allScores, 1);
+                document.getElementById('weeklyChart').innerHTML = allScores.map(v => {
+                    const pct = Math.max(4, (v / maxVal) * 46);
+                    const cls = v < 40 ? 'verylow' : v < 60 ? 'low' : v >= 80 ? 'high' : '';
+                    return `<div class="bar ${cls}" style="height:${pct}px;" title="${v}%"></div>`;
+                }).join('');
+
+                const list = document.getElementById('historyList');
+                const sorted = state.dateIndex.slice().sort().reverse();
+                list.innerHTML = sorted.slice(0, 14).map(key => {
+                    const log = key === state.today ? state.dayLog : state.historyCache[key];
+                    const p = log ? round1(log.foods.reduce((s, f) => s + f.protein, 0) + (log.supplementG || 0) * (
+                        log.supplementPct || 0.75)) : '?';
+                    const d = log ? log.exercises.filter(e => e.done).length : '?';
+                    const t = log ? log.exercises.length : '?';
+                    const sleep = storeGet('sleep_' + key, null);
+                    const s = sleep ? sleep.hours : '—';
+                    const sc = sleep ? sleep.score : '—';
+                    const target = log ? log.proteinTarget : '?';
+                    return `
+                        <div class="food-item">
+                            <span><strong>${key}</strong> ${key === state.today ? '⭐' : ''}</span>
+                            <span>💪 ${p}/${target}g · 🏋️ ${d}/${t} · 😴 ${s}h</span>
+                            <span class="text-sm">⭐${sc}</span>
+                            <button class="btn btn-ghost btn-xs" data-history="${key}">📖</button>
+                        </div>
+                        ${state.historyCache[key] ? `<div class="text-sm text-muted">${state.historyCache[key].note || ''}</div>` : ''}
+                    `;
+                }).join('') || '<span class="text-muted">No history yet.</span>';
+            }
+
+            function renderProfile() {
+                document.getElementById('profName').value = state.profile.name || '';
+                document.getElementById('profWeight').value = state.profile.weight || '';
+                document.getElementById('profHeight').value = state.profile.height || '';
+                document.getElementById('sheetUrl').value = state.sheetUrl || '';
+                document.getElementById('matchDate').value = state.matchDate || '';
+                document.getElementById('darkModeToggle').checked = state.darkMode;
+            }
+
+            function updateTabs() {
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.page === getCurrentPage());
+                });
+                document.querySelectorAll('.page').forEach(p => {
+                    p.classList.toggle('active', p.id === 'page-' + getCurrentPage());
+                });
+            }
+
+            function getCurrentPage() {
+                const active = document.querySelector('.tab-btn.active');
+                return active ? active.dataset.page : 'home';
+            }
+
+            // ============================================================
+            // BIND EVENTS
+            // ============================================================
+            function bindEvents() {
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                        const page = document.getElementById('page-' + btn.dataset.page);
+                        if (page) page.classList.add('active');
+                    });
+                });
+
+                document.getElementById('themeToggle').addEventListener('click', () => applyTheme(!state.darkMode));
+                document.getElementById('darkModeToggle').addEventListener('change', (e) => applyTheme(e.target.checked));
+                document.getElementById('voiceBtn').addEventListener('click', toggleVoice);
+
+                document.querySelectorAll('[data-water]').forEach(btn => {
+                    btn.addEventListener('click', () => addWater(parseInt(btn.dataset.water)));
+                });
+
+                document.querySelectorAll('.activity-chip').forEach(chip => {
+                    chip.addEventListener('click', () => setActivity(chip.dataset.activity));
+                });
+
+                document.getElementById('weightInput').addEventListener('change', (e) => setWeight(e.target.value));
+                document.getElementById('weightInput').addEventListener('input', (e) => setWeight(e.target.value));
+
+                document.getElementById('factorSelect').addEventListener('change', (e) => {
+                    state.factor = parseFloat(e.target.value);
+                    storeSet('factor', state.factor);
+                    if (!state.isManualProtein) {
+                        state.dayLog.proteinTarget = getProteinTarget();
+                        storeSet('day_' + state.dayLog.date, state.dayLog);
+                        renderAll();
+                    }
+                });
+
+                document.getElementById('proteinAutoBtn').addEventListener('click', setAutoProtein);
+                document.getElementById('proteinManualBtn').addEventListener('click', () => {
+                    document.getElementById('proteinManualBox').style.display = 'block';
+                    document.getElementById('proteinManualInput').focus();
+                });
+                document.getElementById('proteinManualSaveBtn').addEventListener('click', () => {
+                    setManualProtein(document.getElementById('proteinManualInput').value);
+                });
+                document.getElementById('proteinManualInput').addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') setManualProtein(e.target.value);
+                });
+                document.getElementById('proteinResetBtn').addEventListener('click', resetConsumed);
+
+                document.addEventListener('click', (e) => {
+                    const target = e.target;
+                    const addBtn = target.closest('[data-add-food]');
+                    if (addBtn) { const id = addBtn.dataset.addFood;
+                        addFoodEntry(id, state.qty[id] || 1); return; }
+                    const qtyUp = target.closest('[data-qty-up]');
+                    if (qtyUp) { const id = qtyUp.dataset.qtyUp;
+                        state.qty[id] = (state.qty[id] || 1) + 1;
+                        renderDiet(); return; }
+                    const qtyDown = target.closest('[data-qty-down]');
+                    if (qtyDown) { const id = qtyDown.dataset.qtyDown;
+                        state.qty[id] = Math.max(0.5, (state.qty[id] || 1) - 1);
+                        renderDiet(); return; }
+                    const removeBtn = target.closest('[data-remove-food]');
+                    if (removeBtn) { removeFoodEntry(removeBtn.dataset.removeFood); return; }
+                    const exBtn = target.closest('[data-toggle-ex]');
+                    if (exBtn) { toggleExercise(exBtn.dataset.toggleEx); return; }
+                    const exActual = target.closest('[data-ex-actual]');
+                    if (exActual) { setExerciseActual(exActual.dataset.exActual, exActual.value); return; }
+                    const check = target.closest('[data-check]');
+                    if (check) {
+                        const idx = parseInt(check.dataset.check);
+                        const data = storeGet('checklist', MATCH_CHECKLIST.map(c => ({ id: genId(), label: c,
+                            done: false })));
+                        if (data[idx]) data[idx].done = !data[idx].done;
+                        storeSet('checklist', data);
+                        renderHome();
+                        return;
+                    }
+                });
+
+                document.querySelectorAll('[data-supp]').forEach(btn => {
+                    btn.addEventListener('click', () => addSupplement(parseInt(btn.dataset.supp)));
+                });
+                document.getElementById('addSuppBtn').addEventListener('click', () => {
+                    const v = parseFloat(document.getElementById('customSupp').value);
+                    if (v > 0) addSupplement(v);
+                });
+
+                document.getElementById('showAddFoodBtn').addEventListener('click', () => {
+                    document.getElementById('addFoodBox').style.display = 'block';
+                });
+                document.getElementById('cancelAddFoodBtn').addEventListener('click', () => {
+                    document.getElementById('addFoodBox').style.display = 'none';
+                });
+                document.getElementById('saveNewFoodBtn').addEventListener('click', () => {
+                    const name = document.getElementById('newFoodName').value.trim();
+                    const unit = document.getElementById('newFoodUnit').value.trim() || '1 serving';
+                    const protein = parseFloat(document.getElementById('newFoodProtein').value);
+                    if (!name || !protein) { flash('Enter name and protein'); return; }
+                    state.foods.push({ id: genId(), name, unit, protein });
+                    storeSet('foods', state.foods);
+                    document.getElementById('addFoodBox').style.display = 'none';
+                    flash('✅ Food added');
+                    renderAll();
+                });
+
+                document.getElementById('workoutPlanSelect').addEventListener('change', (e) => {
+                    setWorkoutPlan(e.target.value);
+                });
+
+                document.getElementById('toggleEditBtn').addEventListener('click', () => {
+                    state.isEditing = !state.isEditing;
+                    const cat = document.getElementById('editPlanSelect').value;
+                    state.editingCategory = cat;
+                    state.localTemplate = (state.workouts[cat] || []).map(e => ({ ...e }));
+                    renderWorkout();
+                });
+
+                document.getElementById('editPlanSelect').addEventListener('change', (e) => {
+                    state.editingCategory = e.target.value;
+                    state.localTemplate = (state.workouts[e.target.value] || []).map(e => ({ ...e }));
+                    renderWorkout();
+                });
+
+                document.addEventListener('click', (e) => {
+                    const rm = e.target.closest('[data-tpl-remove]');
+                    if (rm && state.localTemplate) {
+                        state.localTemplate.splice(parseInt(rm.dataset.tplRemove), 1);
+                        renderWorkout();
+                        return;
+                    }
+                    if (e.target.id === 'tplAddBtn' && state.localTemplate) {
+                        state.localTemplate.push({ id: genId(), name: 'New Exercise', target: '3x10', tip: '' });
+                        renderWorkout();
+                        return;
+                    }
+                    if (e.target.id === 'tplSaveBtn') {
+                        const cat = document.getElementById('editPlanSelect').value;
+                        const names = document.querySelectorAll('[data-tpl-name]');
+                        const targets = document.querySelectorAll('[data-tpl-target]');
+                        const tips = document.querySelectorAll('[data-tpl-tip]');
+                        const exercises = [];
+                        names.forEach((n, i) => {
+                            exercises.push({
+                                id: genId(),
+                                name: n.value || 'Exercise',
+                                target: targets[i]?.value || '3x10',
+                                tip: tips[i]?.value || '',
+                            });
+                        });
+                        saveWorkoutPlan(cat, exercises);
+                        return;
+                    }
+                });
+
+                document.getElementById('newPlanBtn').addEventListener('click', () => {
+                    const name = prompt('Enter new plan name:');
+                    if (name && name.trim()) {
+                        addWorkoutCategory(name.trim());
+                        document.getElementById('editPlanSelect').value = name.trim();
+                        state.editingCategory = name.trim();
+                        state.localTemplate = [];
+                        renderWorkout();
+                    }
+                });
+
+                document.getElementById('sleepManualBtn').addEventListener('click', () => {
+                    const box = document.getElementById('sleepManualBox');
+                    if (box.style.display === 'none') {
+                        box.style.display = 'block';
+                        const now = new Date();
+                        const wakeStr = now.toTimeString().slice(0, 5);
+                        const bed = new Date(now);
+                        bed.setHours(bed.getHours() - 8);
+                        document.getElementById('sleepBedTime').value = bed.toTimeString().slice(0, 5);
+                        document.getElementById('sleepWakeTime').value = wakeStr;
+                    } else {
+                        box.style.display = 'none';
+                    }
+                });
+                document.getElementById('sleepCancelManual').addEventListener('click', () => {
+                    document.getElementById('sleepManualBox').style.display = 'none';
+                });
+                document.getElementById('sleepSaveManual').addEventListener('click', () => {
+                    saveManualSleep(document.getElementById('sleepBedTime').value, document.getElementById('sleepWakeTime')
+                        .value);
+                });
+                document.getElementById('sleepResetBtn').addEventListener('click', resetSleep);
+
+                document.getElementById('saveProfileBtn').addEventListener('click', () => {
+                    state.profile.name = document.getElementById('profName').value || 'Siddhi';
+                    state.profile.weight = parseFloat(document.getElementById('profWeight').value) || 50;
+                    state.profile.height = parseFloat(document.getElementById('profHeight').value) || 160;
+                    storeSet('profile', state.profile);
+                    if (!state.isManualProtein) {
+                        state.dayLog.proteinTarget = getProteinTarget();
+                        storeSet('day_' + state.dayLog.date, state.dayLog);
+                    }
+                    flash('✅ Profile saved');
+                    renderAll();
+                });
+
+                document.getElementById('saveSheetBtn').addEventListener('click', () => {
+                    state.sheetUrl = document.getElementById('sheetUrl').value.trim();
+                    storeSet('sheetUrl', state.sheetUrl);
+                    flash(state.sheetUrl ? '✅ URL saved' : '❌ URL cleared');
+                });
+                document.getElementById('syncNowBtn').addEventListener('click', () => syncToSheet(true));
+
+                document.getElementById('matchDate').addEventListener('change', (e) => {
+                    state.matchDate = e.target.value;
+                    storeSet('matchDate', state.matchDate);
+                    flash('📅 Match date set');
+                    renderHeader();
+                });
+
+                document.getElementById('exportBtn').addEventListener('click', exportCSV);
+
+                document.addEventListener('click', (e) => {
+                    const hist = e.target.closest('[data-history]');
+                    if (hist) {
+                        const key = hist.dataset.history;
+                        if (!state.historyCache[key]) {
+                            const log = storeGet('day_' + key, null);
+                            if (log) state.historyCache[key] = log;
+                        }
+                        renderAnalytics();
+                    }
+                });
+
+                document.addEventListener('input', (e) => {
+                    const tplName = e.target.closest('[data-tpl-name]');
+                    const tplTarget = e.target.closest('[data-tpl-target]');
+                    const tplTip = e.target.closest('[data-tpl-tip]');
+                    if ((tplName || tplTarget || tplTip) && state.localTemplate) {
+                        const idx = parseInt((tplName || tplTarget || tplTip).dataset.tplName ||
+                            (tplName || tplTarget || tplTip).dataset.tplTarget ||
+                            (tplName || tplTarget || tplTip).dataset.tplTip);
+                        if (tplName) state.localTemplate[idx].name = tplName.value;
+                        if (tplTarget) state.localTemplate[idx].target = tplTarget.value;
+                        if (tplTip) state.localTemplate[idx].tip = tplTip.value;
+                    }
+                });
+
+                setupVoice();
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault();
+                        toggleVoice(); }
+                });
+            }
+
+            // ============================================================
+            // EXPORT CSV
+            // ============================================================
+            function exportCSV() {
+                const rows = [
+                    ['date', 'activity', 'protein_target', 'protein_consumed', 'water_ml', 'water_target',
+                        'exercises_done', 'exercises_total', 'sleep_hours', 'sleep_score', 'daily_score', 'note'
+                    ]
+                ];
+                const dates = state.dateIndex.slice().sort();
+                (async () => {
+                    for (const key of dates) {
+                        let log = key === state.today ? state.dayLog : state.historyCache[key];
+                        if (!log) log = storeGet('day_' + key, null);
+                        if (!log) continue;
+                        const consumed = round1(log.foods.reduce((s, f) => s + f.protein, 0) + (log.supplementG || 0) * (
+                            log.supplementPct || 0.75));
+                        const sleep = storeGet('sleep_' + key, null);
+                        const sc = sleep ? sleep.score : 0;
+                        const sh = sleep ? sleep.hours : 0;
+                        const wd = log.exercises.filter(e => e.done).length;
+                        const wt = log.exercises.length || 1;
+                        const p = round1(log.foods.reduce((s, f) => s + f.protein, 0) + (log.supplementG || 0) * (log
+                            .supplementPct || 0.75));
+                        const ps = log.proteinTarget > 0 ? Math.min(100, Math.round((p / log.proteinTarget) * 100)) : 0;
+                        const ws = Math.min(100, Math.round((log.water / Math.max(log.waterTarget, 1)) * 100));
+                        const wos = Math.min(100, Math.round((wd / wt) * 100));
+                        const ds = Math.round(ps * 0.35 + ws * 0.25 + wos * 0.20 + sc * 0.20);
+                        rows.push([log.date, log.category || '', log.proteinTarget, consumed, log.water, log.waterTarget,
+                            wd, wt, sh, sc, ds, (log.note || '').replace(/\n/g, ' ')
+                        ]);
+                    }
+                    const csv = rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(',')).join('\n');
+                    const blob = new Blob([csv], { type: 'text/csv' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'siddhi-tracker-' + state.today + '.csv';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    flash('📥 CSV downloaded');
+                })();
+            }
+
+            // ============================================================
+            // START
+            // ============================================================
+            document.addEventListener('DOMContentLoaded', init);
+
+        })();
+    </script>
+
+</body>
+</html>
